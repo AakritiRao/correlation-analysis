@@ -1,0 +1,16 @@
+
+/* template for question correlation query */
+
+
+SELECT COUNT(DISTINCT voterId) FROM votes WHERE 
+
+/* ADD voterId clauses where neccessary. Depending on usage, also add vote ='1' or '2' */
+
+/* example: */
+ 
+voterId IN (SELECT DISTINCT voterId FROM votes WHERE questionId = '4e1e4a46-38d8-4155-ae55-23e38e5db3ad') AND
+
+
+voterId IN (SELECT DISTINCT voterId FROM votes WHERE questionId = 'b08dd21b-8fbd-4669-9031-1a35235fb8ed' AND vote = '1')
+ 
+
